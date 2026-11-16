@@ -1,6 +1,23 @@
 # 第11周 · Todo V4.0（React 组件重构）
 
+> **课程**：基于Web的编程 · 第 11 周作业（V4.0）
+> **作者**：吴子牛　**学号**：2024041009　**班级**：软件工程01
+> **仓库**：https://github.com/Br1Ke/todo-react-v4
+> **分支**：`main`（默认）/ `feature/w11-react`（本周开发分支）
+
 把第 10 周的 V3.0（Vite + TypeScript + 原生 DOM）迁移到 React，让 **State 驱动 UI**。
+
+## 怎么验收（30 秒）
+
+```bash
+npm install
+npm run test     # 45 条全绿：40 条 V3.0 回归 + 5 条组件级 UI
+npm run build    # tsc --noEmit && vite build
+```
+
+`src/todo.ts`、`src/storage.ts`、`src/types.ts` 与 `tests/` 下三个测试文件
+都是从第 10 周**原样搬过来**的（未改一行），所以测试全绿证明的是
+「迁移没破坏业务逻辑」，而不是「测试被改到能过」。
 
 ## 相对 V3.0 改了什么
 
