@@ -1,0 +1,127 @@
+{
+  "appUrl": "http://127.0.0.1:9491/index.html",
+  "browser": "Chrome/157.0.8103.38",
+  "view": {
+    "width": 900,
+    "height": 1100
+  },
+  "steps": [
+    {
+      "name": "s1_fresh",
+      "error": null,
+      "newErrors": [],
+      "data": {
+        "rows": 0,
+        "counter": "共 0 项 / 未完成 0 项",
+        "stateLen": 0,
+        "emptyShown": true
+      }
+    },
+    {
+      "name": "s2_add_A",
+      "error": null,
+      "newErrors": [],
+      "data": {
+        "typedBeforeClick": "任务A",
+        "inputValueAfter": "",
+        "rows": 1,
+        "texts": [
+          "任务A"
+        ],
+        "stateTexts": [
+          "任务A"
+        ],
+        "counter": "共 1 项 / 未完成 1 项"
+      }
+    },
+    {
+      "name": "s3_print_state",
+      "error": null,
+      "newErrors": [],
+      "data": {
+        "printedJson": "[{\"id\":1,\"text\":\"任务A\",\"done\":false}]",
+        "pageTexts": [
+          "任务A"
+        ],
+        "sameAsPage": true
+      }
+    },
+    {
+      "name": "s4_toggle",
+      "error": null,
+      "newErrors": [],
+      "data": {
+        "firstRowClass": "todo-item is-done",
+        "textDecoration": "line-through",
+        "textColor": "rgb(91, 102, 117)",
+        "checked": true,
+        "stateDone": [
+          true
+        ],
+        "counter": "共 1 项 / 未完成 0 项"
+      }
+    },
+    {
+      "name": "s5_seed_for_shot",
+      "error": null,
+      "newErrors": [],
+      "data": {
+        "texts": [
+          "任务A",
+          "准备周会材料",
+          "评审 V4.0 的组件拆分"
+        ],
+        "stateTexts": [
+          "任务A",
+          "准备周会材料",
+          "评审 V4.0 的组件拆分"
+        ],
+        "counter": "共 3 项 / 未完成 2 项"
+      }
+    },
+    {
+      "name": "s6_delete",
+      "error": null,
+      "newErrors": [],
+      "data": {
+        "beforeRows": 3,
+        "beforeStateLen": 3,
+        "afterRows": 2,
+        "afterStateLen": 2,
+        "texts": [
+          "准备周会材料",
+          "评审 V4.0 的组件拆分"
+        ],
+        "stateTexts": [
+          "准备周会材料",
+          "评审 V4.0 的组件拆分"
+        ],
+        "counter": "共 2 项 / 未完成 2 项"
+      }
+    },
+    {
+      "name": "s7_after_reload",
+      "error": null,
+      "newErrors": [],
+      "data": {
+        "rows": 2,
+        "texts": [
+          "准备周会材料",
+          "评审 V4.0 的组件拆分"
+        ],
+        "stateTexts": [
+          "准备周会材料",
+          "评审 V4.0 的组件拆分"
+        ],
+        "counter": "共 2 项 / 未完成 2 项"
+      }
+    }
+  ],
+  "consoleErrors": [],
+  "consoleLog": [
+    {
+      "type": "log",
+      "text": "[轨道B] React State todos = [{\"id\":1,\"text\":\"任务A\",\"done\":false}]"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+﻿
+> todo-react-w11@4.0.0 test
+> vitest run
+
+
+ RUN  v5.1.0 F:/深圳大学625/大三上/基于Web的编程/作业/第十一周/第11周_Todo_React
+
+ ✓ tests/ai-reviewed.test.ts (12 tests) 5ms
+ ✓ tests/ai-generated.test.ts (7 tests) 3ms
+ ✓ tests/handwritten.test.ts (21 tests) 7ms
+ ✓ tests/react-ui.test.tsx (5 tests) 1755ms
+   ✓ 轨道 B：State 驱动的 UI 行为 (5)
+     ✓ 切换完成：勾选后 is-done 生效，只有这一条变 375ms
+     ✓ 删除：列表少一项，State 同步少一项 390ms
+     ✓ 业务规则仍在：空白与重复输入被拒绝，列表不变、提示可见 344ms
+     ✓ 筛选只改变视图，不改动 State 468ms
+
+ Test Files  4 passed (4)
+      Tests  45 passed (45)
+   Start at  21:04:57
+   Duration  2.50s (tests 72%, environment 19%, import 8%, transform 1%, worker 1%)
+

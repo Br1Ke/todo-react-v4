@@ -1,0 +1,370 @@
+/* ============================================================
+   Todo 列表页面样式（第 6 周 · V2.0 基础版）
+   本周重点是 JS，样式只保证清晰可读、对比度达标。
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #336699;
+  --primary-dark: #24486b;
+  --text: #1f2933;
+  --text-muted: #5b6675;
+  --line: #dde5ef;
+  --bg: #eef1f5;
+  --card: #ffffff;
+  --danger: #b3261e;
+  --radius: 8px;
+  --space: 8px;
+}
+
+body {
+  margin: 0;
+  padding: calc(var(--space) * 4) var(--space);
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Helvetica Neue', Arial, 'Microsoft YaHei', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: calc(var(--space) * 4) calc(var(--space) * 3);
+  background-color: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: var(--primary);
+}
+
+.subtitle {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* 读屏软件可见、视觉隐藏 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- 输入区 ---------- */
+.composer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space);
+  margin-top: calc(var(--space) * 2.5);
+}
+
+.composer-input {
+  flex: 1 1 12rem;
+  min-width: 0;
+  padding: 10px 12px;
+  font: inherit;
+  color: inherit;
+  background-color: #f7f9fc;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.composer-input:focus-visible {
+  outline: 2px solid var(--primary-dark);
+  outline-offset: 1px;
+}
+
+.btn {
+  padding: 10px 18px;
+  font: inherit;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: #ffffff;
+  background-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--primary-dark);
+  outline-offset: 2px;
+}
+
+.hint {
+  margin: var(--space) 0 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ---------- 错误提示 ---------- */
+.error {
+  margin: var(--space) 0 0;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--danger);
+  background-color: #fdecea;
+  border: 1px solid #f5c6c2;
+  border-radius: 6px;
+}
+
+.error[hidden] {
+  display: none;
+}
+
+/* ---------- 列表 ---------- */
+.list-section {
+  margin-top: calc(var(--space) * 3);
+}
+
+.list-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space);
+}
+
+.list-head h2 {
+  margin: 0;
+  padding: 6px 12px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: var(--primary);
+  border-radius: 6px;
+}
+
+.counter {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.todo-list {
+  margin: calc(var(--space) * 2) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--space);
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--space) * 1.5);
+  padding: 10px 12px;
+  background-color: #f7f9fc;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.todo-check {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.todo-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  /* 长英文、长链接不撑破容器 */
+  overflow-wrap: anywhere;
+}
+
+/* 完成态：不只靠颜色区分，同时加删除线 */
+.todo-item.is-done .todo-text {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.btn-del {
+  flex: none;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--danger);
+  background-color: #ffffff;
+  border-color: #f0c9c5;
+}
+
+.btn-del:hover {
+  color: #ffffff;
+  background-color: var(--danger);
+  border-color: var(--danger);
+}
+
+.empty {
+  margin: calc(var(--space) * 2) 0 0;
+  padding: 18px;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+  background-color: #f7f9fc;
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+}
+
+.empty[hidden] {
+  display: none;
+}
+
+.app-footer {
+  margin-top: calc(var(--space) * 3.5);
+  padding-top: calc(var(--space) * 1.5);
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.app-footer p {
+  margin: 0;
+}
+
+.app-footer code {
+  padding: 1px 5px;
+  font-family: Consolas, monospace;
+  font-size: 11px;
+  background-color: #f0f3f8;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+/* ============================================================
+   V2.0 新增：筛选栏
+   ============================================================ */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--space) * 1.5);
+  margin-top: calc(var(--space) * 2);
+}
+
+.filter-btn {
+  padding: 5px 14px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--primary);
+  background-color: #f7f9fc;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  background-color: #eef2f8;
+}
+
+/* 当前生效的筛选用 aria-pressed="true" 表示，视觉上同时体现 */
+.filter-btn[aria-pressed='true'] {
+  color: #ffffff;
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.filter-btn:focus-visible {
+  outline: 2px solid var(--primary-dark);
+  outline-offset: 2px;
+}
+
+/* W8：删除按钮里的图标单独一层，用来验证「点按钮里的图标」也能命中 data-action */
+.btn-icon {
+  display: inline-block;
+  margin-right: 4px;
+  font-size: 11px;
+  line-height: 1;
+}
+/* ============================================================
+   W8 任务3：编辑分支的样式
+   ============================================================ */
+
+.btn-edit {
+  flex: none;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--primary);
+  background-color: #ffffff;
+  border-color: #c7d8ea;
+}
+
+.btn-edit:hover {
+  color: #ffffff;
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.todo-edit-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 4px 8px;
+  font: inherit;
+  font-size: 14px;
+  color: inherit;
+  background-color: #ffffff;
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+}
+
+.todo-edit-input:focus-visible {
+  outline: 2px solid var(--primary-dark);
+  outline-offset: 1px;
+}
+
+.btn-save,
+.btn-cancel {
+  flex: none;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.btn-save {
+  color: #ffffff;
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-save:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-cancel {
+  color: var(--text-muted);
+  background-color: #ffffff;
+  border-color: #c7d8ea;
+}
+
+.btn-cancel:hover {
+  background-color: #f0f3f8;
+}
+
+.btn-save:focus-visible,
+.btn-cancel:focus-visible,
+.btn-edit:focus-visible {
+  outline: 2px solid var(--primary-dark);
+  outline-offset: 2px;
+}
+
+/* 编辑态下这一行要能放下输入框 + 两个按钮 */
+.todo-item:has(.todo-edit-input) {
+  gap: calc(var(--space) * 1);
+}

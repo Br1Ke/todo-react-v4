@@ -1,0 +1,15 @@
+﻿Folder PATH listing for volume F
+Volume serial number is CAA2-733B
+F:\���ڴ�ѧ625\������\����WEB�ı��\��ҵ\��ʮһ��\��11��_TODO_REACT\SRC
+|   global.d.ts
+|   main.tsx
+|   storage.ts
+|   todo.ts
+|   types.ts
+|   
+\---components
+        TodoApp.tsx
+        TodoForm.tsx
+        TodoItem.tsx
+        TodoList.tsx
+        

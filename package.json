@@ -1,0 +1,33 @@
+{
+  "name": "todo-react-w11",
+  "version": "4.0.0",
+  "private": true,
+  "type": "module",
+  "description": "第11周作业：V4.0 React 组件重构与验证（把 V3.0 的原生 DOM Todo 迁到 React 状态驱动）",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "ui-verify": "node scripts/ui-verify.mjs dist _work/ui-verify.json",
+    "verify": "npm run typecheck && npm run test"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.12",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "jsdom": "^31.0.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.0"
+  }
+}

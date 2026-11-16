@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><style>
+  html, body { margin: 0; padding: 0; background: transparent; }
+  .win {
+    display: inline-block; border-radius: 8px; overflow: hidden;
+    border: 1px solid #333; background: #1e1e1e;
+    font-family: Consolas, "Cascadia Mono", "Noto Sans Mono CJK SC", monospace;
+  }
+  .bar {
+    display: flex; align-items: center; gap: 10px; padding: 9px 14px;
+    background: #2d2d2d; border-bottom: 1px solid #3c3c3c;
+    font-family: "Microsoft YaHei", sans-serif; font-size: 12.5px; color: #cfcfcf;
+  }
+  .dots { display: flex; gap: 6px; }
+  .dot { width: 11px; height: 11px; border-radius: 50%; }
+  .d1 { background: #ff5f56; } .d2 { background: #ffbd2e; } .d3 { background: #27c93f; }
+  .body { padding: 12px 18px 14px; }
+  .line { font-size: 13.5px; line-height: 1.68; white-space: pre-wrap; overflow-wrap: anywhere; max-width: 1080px; color: #c8c8c8; }
+  .cmd { color: #ffffff; font-weight: 700; }
+  .note { color: #7f9db9; font-style: italic; }
+  .ok { color: #7ec699; } .ok.strong { font-weight: 700; }
+  .bad { color: #f48771; } .bad.strong { font-weight: 700; }
+  .dim { color: #9d9d9d; }
+  .pkg { color: #9cdcfe; }
+  .tree { color: #dcdcdc; }
+  .tree .dir { color: #dcb67a; font-weight: 700; }
+  .tree .size { color: #808080; }
+</style></head>
+<body><div class="win">
+  <div class="bar">
+    <span class="dots"><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span></span>
+    <span>终端 —— 源码级自查（ripgrep）</span>
+  </div>
+  <div class="body"><div class="line "><span class="note"># [1] 业务组件 + 数据层：应当 0 命中</span></div>
+<div class="line cmd">PS F:\深圳大学625\大三上\基于Web的编程\作业\第十一周\第11周_Todo_React&gt; rg -n --no-heading &quot;document\.(querySelector|getElementById)|innerHTML&quot; src/components src/todo.ts src/storage.ts src/types.ts</div>
+<div class="line "><span class="ok">（无输出，exit code 1 = 无匹配 → 0 命中）</span></div>
+<div class="line ">&nbsp;</div>
+<div class="line "><span class="note"># [2] 全 src/：只剩入口挂载点这一处</span></div>
+<div class="line cmd">PS F:\深圳大学625\大三上\基于Web的编程\作业\第十一周\第11周_Todo_React&gt; rg -n --no-heading &quot;document\.(querySelector|getElementById)|innerHTML&quot; src/</div>
+<div class="line ">src/main.tsx:14:const container = document.getElementById('root');</div></div>
+</div></body></html>
